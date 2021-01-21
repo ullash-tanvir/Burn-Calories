@@ -6,14 +6,7 @@ import pandas as pd
 from xgboost import XGBRegressor
 
 class Model_Finder:
-    """
-                This class shall  be used to find the model with best accuracy and AUC score.
-                Written By: iNeuron Intelligence
-                Version: 1.0
-                Revisions: None
-
-                """
-
+   
     def __init__(self,file_object,logger_object):
         self.file_object = file_object
         self.logger_object = logger_object
@@ -21,18 +14,7 @@ class Model_Finder:
         self.DecisionTreeReg = DecisionTreeRegressor()
 
     def get_best_params_for_random_forest(self,train_x,train_y):
-        """
-                                Method Name: get_best_params_for_random_forest
-                                Description: get the parameters for Random Forest Algorithm which give the best accuracy.
-                                             Use Hyper Parameter Tuning.
-                                Output: The model with the best parameters
-                                On Failure: Raise Exception
-
-                                Written By: iNeuron Intelligence
-                                Version: 1.0
-                                Revisions: None
-
-                        """
+        
         self.logger_object.log(self.file_object, 'Entered the get_best_params_for_random_forest method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
@@ -67,18 +49,7 @@ class Model_Finder:
                                    'Random Forest Parameter tuning  failed. Exited the get_best_params_for_random_forest method of the Model_Finder class')
             raise Exception()
     def get_best_params_for_DecisionTreeRegressor(self, train_x, train_y):
-        """
-                                                Method Name: get_best_params_for_DecisionTreeRegressor
-                                                Description: get the parameters for DecisionTreeRegressor Algorithm which give the best accuracy.
-                                                             Use Hyper Parameter Tuning.
-                                                Output: The model with the best parameters
-                                                On Failure: Raise Exception
-
-                                                Written By: iNeuron Intelligence
-                                                Version: 1.0
-                                                Revisions: None
-
-                                        """
+        
         self.logger_object.log(self.file_object,
                                'Entered the get_best_params_for_DecisionTreeRegressor method of the Model_Finder class')
         try:
@@ -120,18 +91,7 @@ class Model_Finder:
 
     def get_best_params_for_xgboost(self,train_x,train_y):
 
-        """
-                                        Method Name: get_best_params_for_xgboost
-                                        Description: get the parameters for XGBoost Algorithm which give the best accuracy.
-                                                     Use Hyper Parameter Tuning.
-                                        Output: The model with the best parameters
-                                        On Failure: Raise Exception
-
-                                        Written By: iNeuron Intelligence
-                                        Version: 1.0
-                                        Revisions: None
-
-                                """
+       
         self.logger_object.log(self.file_object,
                                'Entered the get_best_params_for_xgboost method of the Model_Finder class')
         try:
@@ -171,17 +131,7 @@ class Model_Finder:
 
 
     def get_best_model(self,train_x,train_y,test_x,test_y):
-        """
-                                                Method Name: get_best_model
-                                                Description: Find out the Model which has the best AUC score.
-                                                Output: The best model name and the model object
-                                                On Failure: Raise Exception
-
-                                                Written By: iNeuron Intelligence
-                                                Version: 1.0
-                                                Revisions: None
-
-                                        """
+       
         self.logger_object.log(self.file_object,
                                'Entered the get_best_model method of the Model_Finder class')
         # create best model for KNN
